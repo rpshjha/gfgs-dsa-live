@@ -5,15 +5,14 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ReadFile {
 
-    static final String filePath = "./testdata/";
+    private static final String BASE_FILE_PATH = "./testdata/";
 
     public static List<String> readTextFile(String fileName) {
-        File file = new File(filePath + fileName);
+        File file = new File(BASE_FILE_PATH + fileName);
         List<String> inputLines = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -21,8 +20,7 @@ public class ReadFile {
             while ((line = reader.readLine()) != null)
                 inputLines.add(line);
         } catch (IOException e) {
-            System.err.println("File not found!!");
-            return Collections.emptyList();
+            throw new RuntimeException("File not found at " + BASE_FILE_PATH + fileName + " !!");
         }
 
         return inputLines;
