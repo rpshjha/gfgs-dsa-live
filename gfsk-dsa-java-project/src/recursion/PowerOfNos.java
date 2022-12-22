@@ -9,13 +9,17 @@ public class PowerOfNos {
     }
 
     static long power(int N, int R) {
-        //Your code here
-        // if(R==0)
-        // return 1;
-        if (R == 1)
-            return N;
 
-//         return N * power(N, R - 1) / 1000000007;
-        return 1l;
+        if (R == 0)
+            return 1;
+
+        long temp = power(N, R / 2);
+        temp = temp * temp % 1000000007;
+
+        if (R % 2 == 0)
+            return temp;
+        else
+            return temp * N % 1000000007;
+
     }
 }
