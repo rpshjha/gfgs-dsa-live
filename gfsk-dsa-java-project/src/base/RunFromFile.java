@@ -1,10 +1,8 @@
 package base;
 
-import rpshjha.practice.arrays.MaxAndSecondMax;
 import rpshjha.practice.arrays.RotateArray;
 import utils.ReadFile;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -15,7 +13,7 @@ public class RunFromFile {
         List<String> data = ReadFile.readTextFile("fileInput.txt");
 
         int N = Integer.parseInt(data.get(0).split(" ")[0]);
-        int D = Integer.parseInt(data.get(0).split(" ")[1]));
+        int D = Integer.parseInt(data.get(0).split(" ")[1]);
         int[] arr = Stream.of(data.get(1).split(" ")).mapToInt(token -> Integer.parseInt(token)).toArray();
 
 //        ArrayList<Integer> ans = MaxAndSecondMax.largestAndSecondLargest(N, arr);
