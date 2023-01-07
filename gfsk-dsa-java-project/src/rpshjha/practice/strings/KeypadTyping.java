@@ -7,17 +7,27 @@ public class KeypadTyping {
 
     public static void main(String[] args) {
 
-
         String S = "geeksforgeeks";
 
         System.out.println(printNumber(S, S.length()));
-
     }
 
     public static String printNumber(String s, int n) {
         //Your code here
 
         String ans = "";
+        Map<String, Integer> map = getStringIntegerMap();
+
+        for (char c : s.toCharArray()) {
+            String temp = map.keySet().stream().filter(s1 -> s1.contains(String.valueOf(c))).findFirst().get();
+            int t = map.get(temp);
+            ans += t;
+        }
+
+        return ans;
+    }
+
+    private static Map<String, Integer> getStringIntegerMap() {
         Map<String, Integer> map = new HashMap<>();
 
         map.put("abc", 2);
@@ -28,15 +38,7 @@ public class KeypadTyping {
         map.put("pqrs", 7);
         map.put("tuv", 8);
         map.put("wxyz", 9);
-
-        for (char c : s.toCharArray()) {
-            String temp = map.keySet().stream().filter(s1 -> s1.contains(String.valueOf(c))).findFirst().get();
-            int t = map.get(temp);
-            ans += t;
-        }
-
-
-        return ans;
+        return map;
     }
 
 

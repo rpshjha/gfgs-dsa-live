@@ -1,6 +1,6 @@
 package rpshjha.practice.strings;
 
-import utils.ReadFile;
+import base.ReadFile;
 
 import java.util.*;
 
@@ -30,9 +30,12 @@ public class NonRepeatingCharacter {
         int max = Collections.max(map.values());
         System.out.println("max val " + max);
 
-
         try {
-            return map.entrySet().stream().filter(k -> k.getValue() == 1).findFirst().get().getKey();
+            char c = map.entrySet().stream()
+                    .filter(k -> k.getValue() == 1)
+                    .findFirst().get().getKey();
+//          return S.indexOf(c);
+            return c;
         } catch (java.util.NoSuchElementException e) {
             return (char) -1;
         }

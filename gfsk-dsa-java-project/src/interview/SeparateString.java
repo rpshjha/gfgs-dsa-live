@@ -1,4 +1,4 @@
-package demo;
+package interview;
 
 
 public class SeparateString {
