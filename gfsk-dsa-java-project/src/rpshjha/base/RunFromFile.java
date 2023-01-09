@@ -1,4 +1,4 @@
-package base;
+package rpshjha.base;
 
 import rpshjha.practice.arrays.RotateArray;
 

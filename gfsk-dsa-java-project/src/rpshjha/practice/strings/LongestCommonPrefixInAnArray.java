@@ -1,6 +1,6 @@
 package rpshjha.practice.strings;
 
-import base.ReadFile;
+import rpshjha.base.ReadFile;
 
 import java.util.*;
 

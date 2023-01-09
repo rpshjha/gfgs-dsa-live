@@ -1,4 +1,4 @@
-package contest;
+package rpshjha.contest;
 
 public class FIndTheString {
 

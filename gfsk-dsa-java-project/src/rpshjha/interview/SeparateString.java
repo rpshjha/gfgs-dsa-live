@@ -1,4 +1,4 @@
-package interview;
+package rpshjha.interview;
 
 
 public class SeparateString {
